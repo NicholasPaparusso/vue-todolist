@@ -18,21 +18,33 @@
   <title>Vue To Do List</title>
 </head>
 <body>
-  <header> Logo </header>
-  
+
+  <header>
+    <img src="./assets/img/logo.png" alt="">
+  </header>
+
   <div id="app" class="main-wrapper">
 
     <div class="input-area">
+
       <input type="text" placeholder="New Task">
+
       <div class="btn">Aggiungi</div>
+
+
     </div>
 
     <div class="task-list-area">
-      <ul>
-        <li>
-
+      <h3>{{msgError}}</h3>
+      <ul v-if="tasks.length > 0" class="task">
+        <li @click="task.done = !task.done" v-for="(task, index) in tasks">
+          <span :class="{'done': task.done === true}">{{task.description}}</span>
+          <i @click.stop="delTask(index)" class="fa-solid fa-circle-xmark"></i>
         </li>
+   
       </ul>
+
+      <h3 v-else>{{msgNoTask}}</h3>
     </div>
 
   </div>

@@ -15,22 +15,29 @@ ul{
 /* Reset */
 body{
   font-family: 'Lato', sans-serif;
-}
+  }
 
 header{
   text-align: center;
+  padding: 50px
+}
+
+header img{
+  width: 300px;
 }
 
 .main-wrapper{
   width: 60%;
   margin: 0 auto;
-  padding: 40px;
+  padding: 20px;
 }
 
 .input-area{
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 50%;
+  margin: 0 auto;
 }
 
 .input-area input{
@@ -40,17 +47,17 @@ header{
   border-radius: 10px;
   font-size: .8em;
   outline: none;
-  border: 2px solid lightgrey;
+  border: 2px solid #5C6B73;
 }
 
 .input-area input:focus-visible{
-  border: 2px solid grey ;
+  border: 2px solid #5C6B73 ;
 }
 
 
 .btn{
   border-radius: 20px;
-  background-color: aqua;
+  background-color: #001533;
   padding: 10px;
   margin-left: 20px;
   color: white;
@@ -58,5 +65,39 @@ header{
 }
 
 .btn:hover{
-  box-shadow: 0 0 5px rgba(0,0,0, .2)               ;
-}
+  box-shadow: 0 0 10px rgba(0,0,0, .2);
+  transform: scale(1.05);
+  transition: all .5s;}
+
+  .task-list-area{
+    padding: 30px;
+
+  }
+
+  .task li{
+    border-bottom: 1px solid #5C6B73;
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+  
+  }
+
+  .task li i{
+    font-size: 1.3em;
+    color: #5C6B73;
+   
+  }
+
+  .task li:hover{
+    background-color: #e5edf0;
+  }
+
+  .task-list-area h3{
+    text-align: center;
+    color: #fc5130;
+  }
+
+  .done{
+    text-decoration: line-through;
+  }
