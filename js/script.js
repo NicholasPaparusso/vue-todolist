@@ -43,7 +43,7 @@ data(){
         done: false
       },
     ],
-    
+
   }
 },
 
@@ -56,6 +56,27 @@ methods:{
     }else{
       this.msgError ="Per eliminare il task bisogna prima svolgerlo "
     }
+  },
+
+  addTask(){
+    this.msgError ="";
+    this.tasks.forEach( task => {
+      if(task.description.toLowerCase() === this.newTask.toLowerCase()){
+        this.msgError ="Il task inserito esiste già !!!"
+         isValid = true; 
+      }   
+    }); 
+      if(this.newTask.length >= 5 && isValid === true){
+        this.tasks.unshift({description: this.newTask,
+          done:false})
+      }else{
+        this.msgError ="Il Task inserito è troppo corto"
+      }
   }
+
 },
 }).mount('#app')
+
+
+
+

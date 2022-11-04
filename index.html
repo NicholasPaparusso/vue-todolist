@@ -27,9 +27,9 @@
 
     <div class="input-area">
 
-      <input type="text" placeholder="New Task">
+      <input @keydown.enter="addTask()" v-model.trim="newTask" type="text" placeholder="Add a new Task">
 
-      <div class="btn">Aggiungi</div>
+      <div @click="addTask()" class="btn">Aggiungi</div>
 
 
     </div>
