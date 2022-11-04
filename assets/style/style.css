@@ -1,0 +1,62 @@
+/* Reset */
+*,
+*::after,
+*::before{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul{
+  list-style: none;
+}
+
+
+/* Reset */
+body{
+  font-family: 'Lato', sans-serif;
+}
+
+header{
+  text-align: center;
+}
+
+.main-wrapper{
+  width: 60%;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.input-area{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-area input{
+  width: 300px;
+  height: 40px;
+  padding: .5em;
+  border-radius: 10px;
+  font-size: .8em;
+  outline: none;
+  border: 2px solid lightgrey;
+}
+
+.input-area input:focus-visible{
+  border: 2px solid grey ;
+}
+
+
+.btn{
+  border-radius: 20px;
+  background-color: aqua;
+  padding: 10px;
+  margin-left: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.btn:hover{
+  box-shadow: 0 0 5px rgba(0,0,0, .2)               ;
+}
