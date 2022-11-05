@@ -6,6 +6,7 @@ data(){
     msgError: "",
     msgNoTask:"Non ci sono Più Tasks",
     newTask:"",
+    isValid: true,
 
     tasks:[
       {
@@ -58,21 +59,35 @@ methods:{
     }
   },
 
-  addTask(){
+  CheckTask(){
+    this.isValid = true
+
     this.msgError ="";
+
     this.tasks.forEach( task => {
       if(task.description.toLowerCase() === this.newTask.toLowerCase()){
-        this.msgError ="Il task inserito esiste già !!!"
-         isValid = true; 
-      }   
-    }); 
-      if(this.newTask.length >= 5 && isValid === true){
-        this.tasks.unshift({description: this.newTask,
-          done:false})
-      }else{
-        this.msgError ="Il Task inserito è troppo corto"
+         this.isValid = false;       
       }
-  }
+    }) 
+  },
+
+  addTask(){
+    this.msgError ="";
+
+    if(this.isValid === false){
+      
+      this.msgError ="Il task inserito esiste già !!!"; 
+
+    }else if(this.newTask.length >= 5 && this.isValid === true){
+
+      this.tasks.unshift({description: this.newTask,
+        done:false})
+
+    }else{
+      this.msgError ="Il Task inserito è troppo corto";
+    }
+     this.newTask ="";
+  },
 
 },
 }).mount('#app')
